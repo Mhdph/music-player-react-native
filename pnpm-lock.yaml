@@ -5,9 +5,15 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@expo/vector-icons':
+    specifier: github:expo/vector-icons
+    version: github.com/expo/vector-icons/37fb84a57e11fdcba544f0fb4e2fdb2fe550ab0b
   '@react-native-menu/menu':
     specifier: ^0.9.1
     version: 0.9.1(react-native@0.73.6)(react@18.2.0)
+  '@react-navigation/native-stack':
+    specifier: ^6.9.26
+    version: 6.9.26(@react-navigation/native@6.1.17)(react-native-safe-area-context@4.8.2)(react-native-screens@3.29.0)(react-native@0.73.6)(react@18.2.0)
   expo:
     specifier: ~50.0.14
     version: 50.0.15(@babel/core@7.24.4)(@react-native/babel-preset@0.73.21)
@@ -9132,4 +9138,11 @@ packages:
       '@types/react': 18.2.78
       react: 18.2.0
       use-sync-external-store: 1.2.0(react@18.2.0)
+    dev: false
+
+  github.com/expo/vector-icons/37fb84a57e11fdcba544f0fb4e2fdb2fe550ab0b:
+    resolution: {tarball: https://codeload.github.com/expo/vector-icons/tar.gz/37fb84a57e11fdcba544f0fb4e2fdb2fe550ab0b}
+    name: '@expo/vector-icons'
+    version: 14.0.0
+    requiresBuild: true
     dev: false

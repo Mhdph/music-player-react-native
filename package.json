@@ -9,7 +9,9 @@
 		"lint": "eslint ."
 	},
 	"dependencies": {
+		"@expo/vector-icons": "github:expo/vector-icons",
 		"@react-native-menu/menu": "^0.9.1",
+		"@react-navigation/native-stack": "^6.9.26",
 		"expo": "~50.0.14",
 		"expo-blur": "~12.9.2",
 		"expo-constants": "~15.4.5",
