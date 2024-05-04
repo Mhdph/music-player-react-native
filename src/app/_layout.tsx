@@ -5,6 +5,7 @@ import { SplashScreen, Stack } from 'expo-router'
 import { useSetupTrackPlayer } from '@/hooks/useSetupTrackPlayer'
 import { useCallback } from 'react'
 import { useLogTrackPlayerState } from '@/hooks/useLogTrackPlayerState'
+import { GestureHandlerRootView } from 'react-native-gesture-handler'
 
 SplashScreen.preventAutoHideAsync()
 
@@ -20,8 +21,10 @@ export default function App() {
 	})
 	return (
 		<SafeAreaProvider style={styles.container}>
-			<RootNavigation />
-			<StatusBar style="auto" />
+			<GestureHandlerRootView style={{ flex: 1 }}>
+				<RootNavigation />
+				<StatusBar style="auto" />
+			</GestureHandlerRootView>
 		</SafeAreaProvider>
 	)
 }
@@ -32,6 +35,16 @@ const RootNavigation = () => {
 			<Stack.Screen
 				name="(tabs)"
 				options={{
+					headerShown: false,
+				}}
+			/>
+			<Stack.Screen
+				name="player"
+				options={{
+					presentation: 'card',
+					gestureEnabled: true,
+					gestureDirection: 'vertical',
+					animationDuration: 400,
 					headerShown: false,
 				}}
 			/>
