@@ -1,8 +1,23 @@
 import { StatusBar } from 'expo-status-bar'
 import { StyleSheet } from 'react-native'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
-import { Stack } from 'expo-router'
+import { SplashScreen, Stack } from 'expo-router'
+import { useSetupTrackPlayer } from '@/hooks/useSetupTrackPlayer'
+import { useCallback } from 'react'
+import { useLogTrackPlayerState } from '@/hooks/useLogTrackPlayerState'
+
+SplashScreen.preventAutoHideAsync()
+
 export default function App() {
+	useLogTrackPlayerState()
+
+	const handleTrackPlayerLoaded = useCallback(() => {
+		SplashScreen.hideAsync()
+	}, [])
+
+	useSetupTrackPlayer({
+		onLoad: handleTrackPlayerLoaded,
+	})
 	return (
 		<SafeAreaProvider style={styles.container}>
 			<RootNavigation />
